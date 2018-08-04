@@ -22,9 +22,8 @@ namespace How_to_consume_Rest_API
             Project project = new Project() { ProjectName = "NewProject" };
             var objToPost = JsonConvert.SerializeObject(project);
 
-             response = apiCallHelper.CallToAPI("APIURL", objToPost, MethodType.GET, true, null, false);
-             var result = JsonConvert.DeserializeObject<Project>(response.Result);
-            Console.WriteLine(result);
+             response = apiCallHelper.CallToAPI("APIURL", objToPost, MethodType.POST, true, null, false);
+             Console.WriteLine(response.Result);
 
             Console.ReadKey();
         }
